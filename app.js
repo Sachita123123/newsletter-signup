@@ -2,7 +2,7 @@ const express = require("express");
 const https = require("node:https");
 const bodyParser = require("body-parser")
 const client = require("@mailchimp/mailchimp_marketing");
-
+const port = process.env.PORT || 3000;
 
 const app = express();
 
@@ -71,6 +71,6 @@ app.post("/failure", function(req, res){
 
 
 
-app.listen(process.env.PORT || 3000, function(){
+app.listen(port, function(){
     console.log("Server is runing ");
 });
